@@ -1,9 +1,18 @@
-<div class="form-group">
-  <%= f.hidden_field :status, value: t(:label, label: "start") %>
+<div class="form-group" style="border:0px solid black; overflow:hidden">
   <%= f.label :Task %>
   <%= f.text_field :name, calss: "form-control" %>
   <%= f.label :Instruction %>
   <%= f.text_area :description, class: "form-control" %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"> 
+        <%= f.label :status %>
+      </div>
+      <div class="col-md-4"> 
+        <%= f.select :status, ["Start", "Finished"] %>
+      </div>
+    </div>
+  </div>
   <div style="float: right;">
     <%= link_to_remove_fields t("supervisor.link.remove_task"), f %>
   </div>

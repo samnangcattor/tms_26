@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   create_succes: "Create Succesful %{model}"
-  edit_succes: "Edite Succesful %{model}"
+  edit_succes: "Edit Succesful %{model}"
   delete_succes: "Delete Succesful %{model}"
   label: "%{label}"
   login_message: "Please log in."
@@ -33,3 +33,15 @@ en:
   headers:
     assiguser: "List of user"
     memberUserOfCourse: "Members of the course"
+  links:
+    delete: "Delete"
+    edit: "Edit"
+  flash:
+    edit_succes: "Edit Succesful"
+    delete_succes: "Delete Succesful"
+    create_succes: "Create Succesful"
+  confirms:
+    delete: "Are you sure?"
+  status:
+    start: "Start"
+    finished: "Finished"
