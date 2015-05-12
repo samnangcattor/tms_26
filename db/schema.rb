@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511075140) do
+ActiveRecord::Schema.define(version: 20150513024204) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20150511075140) do
     t.boolean  "isSupervisor",    limit: 1
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "remember_digest", limit: 255
   end
 
   add_foreign_key "activities", "users"
