@@ -23,3 +23,4 @@ en:
   hello: "Hello world"
   create_succes: "Create Succesful %{model}"
   label: "%{label}"
+  login_message: "Please log in."
