@@ -1,0 +1,19 @@
+<div class="row">
+ <div class="user_profile_block">
+  <aside class="col-md-4">
+   <section class="user_info">
+    This side for user profile.
+   </section>  
+  </aside>
+ </div>
+ <div class="col-md-8">
+  <div class="panel panel-default">
+   <div class="panel-heading"><h1><%= @course.name %></h1></div>
+   <div class="status">
+    <span class="label label-primary">Status : <%= @course.status %></span>
+   </div>
+   <h2><%= t(:title, title: :"Description") %></h2>
+   <div class="description"><%= @course.description %></div>
+  </div>
+ </div>
+</div>
