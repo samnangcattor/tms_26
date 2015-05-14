@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users
   namespace :supervisor do
     resources :users
+    resources :courses
   end
 end

@@ -1,0 +1,24 @@
+<h1>Create course</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:supervisor, @course] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+      <div class="container-fluid">
+       <%= f.label :status %>
+       <div class="row">
+        <div class="col-md-1"> <%= f.label :status, t(:label, label: "Yes"), value: true %> </div>
+        <div class="col-md-1"> <%= f.radio_button :status, t(:label, label: "start") %> </div>
+      </div>
+      <div class="row">
+       <div class="col-md-1"> <%= f.label :status, t(:label, label: "No"), value: false %> </div>
+       <div class="col-md-1"> <%= f.radio_button :status, t(:label, label: "not start"), checked: true %> </div>
+      </div>
+      </div>
+      <%= f.submit t(:label, label: "Create Course"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
