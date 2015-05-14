@@ -5,8 +5,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Create User", "#" %></li>
-          <li><%= link_to "Users", "#" %></li>
+          <% if current_user.isSupervisor? %>
+            <li><%= link_to "Create User", new_supervisor_user_path %></li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>

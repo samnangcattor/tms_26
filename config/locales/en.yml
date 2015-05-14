@@ -24,3 +24,4 @@ en:
   create_succes: "Create Succesful %{model}"
   edit_succes: "Edite Succesful %{model}"
   label: "%{label}"
+  login_message: "Please log in."
