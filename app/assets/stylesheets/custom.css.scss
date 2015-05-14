@@ -153,3 +153,20 @@ input {
   width: auto;
   margin-left: 0;
 }
+.panel-heading h1 {
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.description{
+  font-size: 1.2em;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-buttom: 10px;
+  word-wrap: break-word;
+}
+.status{
+  margin: 10px
+}
