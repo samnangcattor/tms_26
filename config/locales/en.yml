@@ -22,4 +22,5 @@
 en:
   hello: "Hello world"
   create_succes: "Create Succesful %{model}"
+  edit_succes: "Edite Succesful %{model}"
   label: "%{label}"
