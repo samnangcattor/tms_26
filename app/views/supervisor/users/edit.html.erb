@@ -1,5 +1,5 @@
-<% provide :title, "Create User" %>
-<h1>Create User</h1>
+<% provide :title, "Edit user" %>
+<h1><%= t(:label, label:"Update Profile User") %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for [:supervisor, @user] do |f| %>
@@ -14,11 +14,12 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.label :password_confirmation, t(:label, label:"Confirm") %>
+      <%= f.label :password_confirmation, t(:label, label: "Confirm") %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
-      <%= f.submit t(:label, label:"Create new user"), class: "btn btn-primary" %>
+      <%= f.submit t(:label, label: "Save to Change"), class: "btn btn-primary" %>
     <% end %>
-    
+
+    </div>
   </div>
 </div>

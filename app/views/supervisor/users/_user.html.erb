@@ -1,8 +1,9 @@
 <ul class = "users">
-  <% @users.each do |users| %>
-    <li>
-      <%= gravatar_for users, size: 50 %>
-      <%= link_to users.name, users %>
-    </li>
-  <% end %>
+  <li>
+    <%= gravatar_for user, size: 50 %>
+    <%= link_to user.name, [:supervisor, user] %>
+    <%= link_to t(:label, label: "Edit"), edit_supervisor_user_path(user) %>
+    <%= link_to t(:label, label: "Delete"), [:supervisor, user], method: :delete, 
+	                                         data: {confirm: "Are you sure ?"} %>
+  </li>
 </ul>

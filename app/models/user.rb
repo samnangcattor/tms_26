@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
 
-  has_many :activies, dependent: :destroy
+  has_many :activities, dependent: :destroy
   has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses, dependent: :destroy
   has_many :user_subjects, dependent: :destroy
