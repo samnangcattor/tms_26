@@ -1,0 +1,8 @@
+<ul class = "users">
+  <% @users.each do |users| %>
+    <li>
+      <%= gravatar_for users, size: 50 %>
+      <%= link_to users.name, users %>
+    </li>
+  <% end %>
+</ul>
