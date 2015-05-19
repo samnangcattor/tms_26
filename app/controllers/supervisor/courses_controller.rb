@@ -2,6 +2,10 @@ class Supervisor::CoursesController < ApplicationController
   def new
     @course = Course.new
   end
+
+  def index
+    @courses = Course.paginate page: params[:page]
+  end
   
   def create
     @course = Course.new course_params
