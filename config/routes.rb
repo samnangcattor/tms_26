@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   namespace :supervisor do
     resources :users
     resources :courses
+    resources :subjects
   end
 end

@@ -1,0 +1,9 @@
+<div class="form-group">
+  <%= f.label :Task %>
+  <%= f.text_field :name, calss: "form-control" %>
+  <%= f.label :Instruction %>
+  <%= f.text_area :description, class: "form-control" %>
+  <div style="float: right;">
+    <%= link_to_remove_fields t("supervisor.link.remove_task"), f %>
+  </div>
+</div>
