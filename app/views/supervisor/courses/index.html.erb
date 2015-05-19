@@ -1,0 +1,7 @@
+<% provide :title, "All Course" %>
+<h1><%= t(:title, title: :"All Courses") %></h1>
+<%= will_paginate %>
+<ul class = "users">
+  <%= render @courses %>
+</ul>
+<%= will_paginate %>

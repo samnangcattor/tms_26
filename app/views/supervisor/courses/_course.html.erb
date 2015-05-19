@@ -1,0 +1,10 @@
+<ul class = "cousres">
+  <% @courses.each do |course| %>
+    <li>
+     <%= link_to course.name, [:supervisor, course] %>
+     <span class="timestamp">
+      created: <%= time_ago_in_words course.created_at %> ago.
+     </span>
+    </li>
+  <% end %>
+</ul>
