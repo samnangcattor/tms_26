@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
   create_succes: "Create Succesful %{model}"
   edit_succes: "Edite Succesful %{model}"
+  delete_succes: "Delete Succesful %{model}"
   label: "%{label}"
   login_message: "Please log in."
   title: "%{title}"

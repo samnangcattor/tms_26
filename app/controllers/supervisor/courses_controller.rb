@@ -35,6 +35,13 @@ class Supervisor::CoursesController < ApplicationController
     @course = Course.find params[:id]
   end
 
+  def destroy
+    @course = Course.find params[:id]
+    @course.destroy
+    flash[:success] = t(:delete_succes, model: :"Course")
+    redirect_to supervisor_courses_url
+  end
+
   private
   def course_params
     params.require(:course).permit :name, :description, :status
