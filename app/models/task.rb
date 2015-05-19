@@ -1,10 +1,10 @@
 class Task < ActiveRecord::Base
-  belongs_to :subject
+  belongs_to :subject, inverse_of: :tasks
   has_many :user_tasks, dependent: :destroy
   has_many :users, through: :user_tasks
 
   validates :name, presence: true, length: {maximum: 50}
   validates :status, presence: true, length: {maximum: 10}
   validates :description, presence: true, length: {maximum: 500}
-  validates :subject_id, presence: true
+  validates :subject, presence: true
 end
