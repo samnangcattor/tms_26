@@ -1,5 +1,4 @@
 <ul class = "cousres">
-  <% @courses.each do |course| %>
     <li>
      <%= link_to course.name, [:supervisor, course] %>
      <span class="timestamp">
@@ -7,7 +6,6 @@
      </span>
      <%= link_to "edit", edit_supervisor_course_path(course) %>
      <%= link_to "delete", [:supervisor, course], method: :delete,
-                                       data: { confirm: "You sure?" } %>
+                                       data: {confirm: "You sure?"} %>
     </li>
-  <% end %>
 </ul>

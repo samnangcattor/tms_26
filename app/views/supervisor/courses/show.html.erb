@@ -12,6 +12,14 @@
    <div class="status">
     <span class="label label-primary">Status : <%= @course.status %></span>
    </div>
+   <h2>Subjects</h2>
+   <div class="list_sub">
+    <ul class="list-group">
+     <% @subjects.each do |subject| %>
+      <li class="list-group-item"><%= link_to subject.name, [:supervisor, subject] %></li>
+     <% end %>
+    </ul>
+   </div>
    <h2><%= t(:title, title: :"Description") %></h2>
    <div class="description"><%= @course.description %></div>
   </div>
