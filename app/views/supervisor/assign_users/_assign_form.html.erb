@@ -1,0 +1,2 @@
+<h2><%= t("headers.assiguser") %></h2>
+<%= f.collection_check_boxes :user_ids, User.all, :id, :name, hide_label: true %>

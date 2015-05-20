@@ -2,7 +2,7 @@
  <div class="user_profile_block">
   <aside class="col-md-4">
    <section class="user_info">
-    This side for user profile.
+    <%= t("button.memberUserOfCourse") %>
    </section>  
   </aside>
  </div>
@@ -23,5 +23,6 @@
    <h2><%= t(:title, title: :"Description") %></h2>
    <div class="description"><%= @course.description %></div>
   </div>
+  <%= link_to t("button.addUser"), supervisor_course_assign_users_path(@course), class: "btn btn-primary" %>
  </div>
 </div>

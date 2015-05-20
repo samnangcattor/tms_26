@@ -27,3 +27,9 @@ en:
   label: "%{label}"
   login_message: "Please log in."
   title: "%{title}"
+  button:
+    submit: "Sumbit"
+    addUser: "Add User"
+  headers:
+    assiguser: "List of user"
+    memberUserOfCourse: "Members of the course"
