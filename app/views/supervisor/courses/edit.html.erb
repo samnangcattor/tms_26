@@ -12,13 +12,15 @@
        <div class="row">
         <div class="col-md-1"> <%= f.label :status, t(:label, label: "Yes"), value: true %> </div>
         <div class="col-md-1"> <%= f.radio_button :status, t(:label, label: "start") %></div>
+       </div>
+       <div class="row">
+        <div class="col-md-1"> <%= f.label :status, t(:label, label: "No"), value: false %> </div>
+        <div class="col-md-1"> <%= f.radio_button :status, t(:label, label: "not start"), checked: true %> </div>
+       </div>
       </div>
-      <div class="row">
-       <div class="col-md-1"> <%= f.label :status, t(:label, label: "No"), value: false %> </div>
-       <div class="col-md-1"> <%= f.radio_button :status, t(:label, label: "not start"), checked: true %> </div>
-      </div>
-      </div>
-      <%= f.submit t(:label, label: "Create Course"), class: "btn btn-primary" %>
+      <h2>List of Subjects</h2>
+      <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name, hide_label: true %>
+      <%= f.submit t(:label, label: "Update Course"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

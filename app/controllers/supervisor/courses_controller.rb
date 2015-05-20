@@ -33,6 +33,7 @@ class Supervisor::CoursesController < ApplicationController
 
   def show
     @course = Course.find params[:id]
+    @subjects = @course.subjects
   end
 
   def destroy
@@ -44,6 +45,6 @@ class Supervisor::CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit :name, :description, :status
+    params.require(:course).permit :name, :description, :status, subject_ids: []
   end
 end

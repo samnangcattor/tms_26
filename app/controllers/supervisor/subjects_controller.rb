@@ -12,7 +12,7 @@ class Supervisor::SubjectsController < ApplicationController
       render "new"
     end   
   end
-
+  
   private
   def subject_params
     params.require(:subject).permit :name, :description, :status , 
