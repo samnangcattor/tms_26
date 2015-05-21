@@ -29,10 +29,10 @@ en:
   title: "%{title}"
   button:
     submit: "Sumbit"
-    addUser: "Add User"
+    add_user: "Add User"
   headers:
     assiguser: "List of user"
-    memberUserOfCourse: "Members of the course"
+    member_user_of_course: "Members of the course"
   links:
     delete: "Delete"
     edit: "Edit"
