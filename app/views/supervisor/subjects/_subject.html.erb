@@ -1,0 +1,9 @@
+<li>
+  <%= link_to subject.name, [:supervisor, subject] %>
+  <span class="timestamp">
+    created: <%= time_ago_in_words subject.created_at %> ago.
+  </span>
+  <%= link_to t("links.edit"), edit_supervisor_subject_path(subject) %>
+  <%= link_to t("links.delete"), [:supervisor, subject], 
+    method: :delete, data: {confirm: t("confirms.delete")} %>
+</li>

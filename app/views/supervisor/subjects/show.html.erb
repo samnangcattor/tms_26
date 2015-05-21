@@ -1,0 +1,30 @@
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+   <div class="panel-heading"><h1><%= @subject.name %></h1></div>
+   <div class="status">
+    <span class="label label-primary">Status : <%= @subject.status %></span>
+   </div>
+   <h2><%= t(:title, title: :"Instruction") %></h2>
+   <div class="description"><%= @subject.description %></div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t("subject.Tasks") %></th>
+        <th><%= t("subject.Instruction") %></th>
+        <th><%= t("subject.status") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @subject.tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><span class="label label-primary"><%= task.status %></span></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+ </div>
+</div>
