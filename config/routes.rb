@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   delete  "logout"  => "sessions#destroy"
   resources :users
   namespace :supervisor do
+    root  "courses#index"
     resources :users
-    resources :courses
+    resources :courses do
+      resource :assign_users
+    end
     resources :subjects
   end
 end
