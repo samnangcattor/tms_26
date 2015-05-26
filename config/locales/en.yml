@@ -33,9 +33,16 @@ en:
   headers:
     assiguser: "List of user"
     member_user_of_course: "Members of the course"
+    list_of_course: "List Of Courses"
   links:
+    titles: "Framgia Trainging System"
+    home: "Home"
+    profile: "Profile"
+    settings: "Settings"
     delete: "Delete"
     edit: "Edit"
+    log_in: "Log in"
+    log_out: "Log out"
   flash:
     edit_succes: "Edit Succesful"
     delete_succes: "Delete Succesful"
@@ -45,3 +52,10 @@ en:
   status:
     start: "Start"
     finished: "Finished"
+  menus:
+    create_new_user: "Create New User"
+    create_new_course: "Create New Course"
+    create_new_subject: "Create New Subject"
+    show_all_users: "Show All Users"
+    show_all_courses: "Show All Courses"
+    show_all_subjects: "Show All Subjects"

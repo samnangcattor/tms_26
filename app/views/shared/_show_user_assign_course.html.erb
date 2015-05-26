@@ -1,6 +1,6 @@
 <div class="user_avatars">
   <% @course.users.each do |user|  %>
-    <% if current_user.is_supervisor? %>
+    <% if current_user.supervisor? %>
       <%= link_to gravatar_for(user, size: 30), [:supervisor, user] %>
     <% else %>
       <%= link_to gravatar_for(user, size: 30), user %>
