@@ -1,5 +1,5 @@
 class Supervisor::SubjectsController < ApplicationController
-  before_action :set_subject, except: [:index, :create]
+  before_action :set_subject, except: [:index, :new, :create]
 
   def index
     @subjects = Subject.paginate page: params[:page]
