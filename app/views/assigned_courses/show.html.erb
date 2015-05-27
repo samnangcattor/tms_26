@@ -1,0 +1,8 @@
+<div class="col-mid-8">
+  <ul class = "courses">
+    <h1><%= t("headers.list_of_course") %></h1>
+    <% @courses.each do |course| %>
+      <h2><%= link_to course.name, course_path(course) %></h2>
+    <% end %>
+  </ul>
+</div>

@@ -1,19 +1,22 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Framgia Training System", root_path, id: "logo" %>
+    <%= link_to t("links.titles"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to t("links.home"), root_path %></li>
         <% if logged_in? %>
-          <% if current_user.is_supervisor? %>
+          <% if current_user.supervisor? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 User <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Create New User", new_supervisor_user_path%></li>
-                <li><%= link_to "Show All User", supervisor_users_path %></li>
-              </li>
+                <li>
+                  <%= link_to t("menus.create_new_user"), new_supervisor_user_path %>
+                </li>
+                <li>
+                  <%= link_to t("menus.show_all_users"), supervisor_users_path %>
+                </li>
               </ul>
             </li>
             <li class="dropdown">
@@ -21,9 +24,12 @@
                 Course <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Create New Course", new_supervisor_course_path %></li>
-                <li><%= link_to "Show All Course", supervisor_courses_path %></li>
-              </li>
+                <li>
+                  <%= link_to t("menus.create_new_user"), new_supervisor_course_path %>
+                </li>
+                <li>
+                  <%= link_to t("menus.show_all_courses"), supervisor_courses_path %>
+                </li>
               </ul>
             </li>
             <li class="dropdown">
@@ -32,26 +38,33 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to "Show All Subject", supervisor_subjects_path %></li>
+                  <%= link_to t("menus.create_new_subject"), new_supervisor_subject_path %>
+                </li>
+                <li>
+                  <%= link_to t("menus.show_all_subjects"), supervisor_subjects_path %>
                 </li>
               </ul>
             </li>
+          <% elsif %>
+          <li>
+            <%= link_to t("menus.show_all_courses"), user_assigned_courses_path(@current_user) %>
+          </li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li><%= link_to t("links.profile"), current_user %></li>
+              <li><%= link_to t("links.settings"), edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
+                <%= link_to t("links.log_out"), logout_path, method: "delete" %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to t("links.log_in"), login_path %></li>
         <% end %>
       </ul>
     </nav>
