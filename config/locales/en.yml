@@ -48,6 +48,8 @@ en:
     edit_succes: "Edit Succesful"
     delete_succes: "Delete Succesful"
     create_succes: "Create Succesful"
+    add_new_trainee: "Add new trainee"
+    already_added: "Already add"
   confirms:
     delete: "Are you sure?"
   status:
