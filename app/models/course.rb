@@ -10,8 +10,10 @@ class Course < ActiveRecord::Base
   validates :description, presence: true, length: {maximum: 500}
   validates :status, presence: true, length: {maximum: 10}
 
+  scope :current_course, ->{where status: Settings.start}
+
   private 
   def set_course_activity
-    users.each {|user| user.activities.create target_id: id, state: "Joined"}
+    users.each {|user| user.activities.create target_id: id, state: Settings.joined}
   end
 end

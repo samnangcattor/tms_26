@@ -5,5 +5,6 @@ class Activity < ActiveRecord::Base
   validates :target_id, presence: true
   validates :state, presence: true, length: {maximum: 50}
 
-  scope :course_activities, ->(course_id){where target_id: course_id, state: "Joined"}
+  scope :course_activities, ->(course_id){where target_id: course_id, state: Settings.joined}
+  scope :subject_activities, ->(subject_id){where target_id: subject_id, state: Settings.learned}
 end

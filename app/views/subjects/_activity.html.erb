@@ -1,0 +1,9 @@
+<% @activities.subject_activities(subject).each do |activity| %>
+  <div>
+    <%= subject.name %>
+    <%= activity.state %>
+    <%= activity.created_at %>
+    <%= t("headers.status") %>
+    <%= subject.status %>
+  </div>
+<% end %>

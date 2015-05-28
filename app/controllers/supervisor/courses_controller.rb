@@ -1,16 +1,22 @@
 class Supervisor::CoursesController < ApplicationController
-  def new
-    @course = Course.new
-  end
+  before_action :set_course, except: [:index, :new, :create]
 
   def index
     @courses = Course.paginate page: params[:page]
+  end
+
+  def show
+    @subjects = @course.subjects
+  end
+
+  def new
+    @course = Course.new
   end
   
   def create
     @course = Course.new course_params
     if @course.save
-      flash[:info] = t(:create_succes, model: :"Course")
+      flash[:info] = t("flash.create_succes")
       redirect_to [:supervisor, @course]
     else
       render "new"
@@ -18,32 +24,28 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def edit
-    @course = Course.find params[:id]
   end
 
   def update
-    @course = Course.find params[:id]
     if @course.update_attributes(course_params)
-      flash[:info] = t(:edit_succes, model: :"Course")
+      flash[:info] = t("flash.update_succes")
       redirect_to [:supervisor, @course]
     else
       render "edit"
     end
   end
 
-  def show
-    @course = Course.find params[:id]
-    @subjects = @course.subjects
-  end
-
   def destroy
-    @course = Course.find params[:id]
     @course.destroy
-    flash[:success] = t(:delete_succes, model: :"Course")
+    flash[:success] = t("flash.delete_succes")
     redirect_to supervisor_courses_url
   end
 
   private
+  def set_course
+    @course = Course.find params[:id]
+  end
+
   def course_params
     params.require(:course).permit :name, :description, :status, subject_ids: []
   end
