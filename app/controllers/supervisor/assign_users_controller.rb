@@ -1,12 +1,12 @@
 class Supervisor::AssignUsersController < ApplicationController
+  before_action :set_course, only: [:show, :update]
+
   def show
-    @course = Course.find params[:course_id]
   end
 
   def update
-    @course = Course.find params[:course_id]
     if @course.update_attributes course_params
-      flash[:sucess] = t(:label, label: :"Course is updated")
+      flash[:sucess] = t("flash.already_added")
       redirect_to request.referrer || root_url
     else
       redirect_to request.referrer || root_url
@@ -14,6 +14,10 @@ class Supervisor::AssignUsersController < ApplicationController
   end
 
   private
+  def set_course
+    @course = Course.find params[:course_id] 
+  end
+
   def course_params
     params.require(:course).permit user_ids: []
   end
