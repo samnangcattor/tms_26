@@ -35,6 +35,7 @@ en:
     member_user_of_course: "Members of the course"
     list_of_course: "List Of Courses"
     activity: "Activity"
+    status: "Status:"
   links:
     titles: "Framgia Trainging System"
     home: "Home"
@@ -50,6 +51,7 @@ en:
     create_succes: "Create Succesful"
     add_new_trainee: "Add new trainee"
     already_added: "Already add"
+    update_succes: "Update Succesful"
   confirms:
     delete: "Are you sure?"
   status:

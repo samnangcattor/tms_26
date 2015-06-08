@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @course = @user.courses.current_course
+    @activities = @user.activities
   end
 
   def edit
