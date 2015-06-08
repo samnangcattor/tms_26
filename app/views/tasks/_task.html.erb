@@ -1,0 +1,9 @@
+<% @activities.task_activities(task).each do |activity| %>
+  <div>
+    <%= task.name %>
+    <%= activity.state %>
+    <%= activity.created_at %>
+    <%= t("headers.status") %>
+    <%= task.status %>
+  </div>
+<% end %>

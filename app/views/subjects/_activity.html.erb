@@ -5,5 +5,6 @@
     <%= activity.created_at %>
     <%= t("headers.status") %>
     <%= subject.status %>
+    <%= render partial: "tasks/task", collection: subject.tasks, as: :task %>
   </div>
 <% end %>
