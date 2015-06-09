@@ -8,4 +8,9 @@
       </h1>
     </section>
   </aside>
+ <div class="col-md-8">
+    <div class="panel panel-default">
+     <%= render partial: "supervisor/courses/show", collection: @course, as: :course %>
+    </div>
+  </div>
 </div>
