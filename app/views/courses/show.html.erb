@@ -1,11 +1,14 @@
 <div class="row">
-  <div class="user_profile_block">
-   <aside class="col-md-4">
-      <section class="user_info">
-        <%= t("button.member_user_of_course") %>
-      </section>
-      <%= render "shared/show_user_assign_course" %>  
-    </aside>
+  <aside class="col-md-3">
+    <section class="user_info">
+      <%= t("button.member_user_of_course") %>
+    </section>
+    <%= render "shared/show_user_assign_course" %>  
+  </aside>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <%= render "show", course: @course %>
+    </div>
   </div>
-<div>
-<%= render "courses/activities" %>
+  <%= render "courses/activities" %>
+</div>
