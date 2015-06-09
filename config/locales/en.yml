@@ -36,6 +36,8 @@ en:
     list_of_course: "List Of Courses"
     activity: "Activity"
     status: "Status:"
+    instruction: "Instruction:"
+    subject: "Subjects:"
   links:
     titles: "Framgia Trainging System"
     home: "Home"

@@ -1,6 +1,7 @@
 class Supervisor::UsersController < ApplicationController
   before_action :logged_in_user, only: [:index]
   before_action :admin_user,  only: [:new, :destroy, :edit]
+  before_action :set_course, only: [:show, :edit]
 
   def new
    @user = User.new
@@ -21,11 +22,10 @@ class Supervisor::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
+    @course = @user.courses.current_course
   end
 
   def edit
-    @user = User.find params[:id]
   end
 
   def update
@@ -60,5 +60,9 @@ class Supervisor::UsersController < ApplicationController
 
   def admin_user
     redirect_to root_url unless current_user.supervisor?
+  end
+
+  def set_course
+    @user = User.find params[:id]
   end
 end

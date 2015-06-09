@@ -1,0 +1,12 @@
+<h2><%= t("headers.subject") %></h2>
+<div class="list_sub">
+  <ul class="list-group">
+    <li class="list-group-item"><%= link_to subject.name, [:supervisor, subject] %>
+      <span class="label label-primary pull-right">
+        <%= t("headers.status") %>
+        <%= subject.status %>
+      </span>
+      <%= render partial: "supervisor/subjects/task", collection: subject.tasks, as: :task %>
+    </li>
+  </ul>
+</div>
