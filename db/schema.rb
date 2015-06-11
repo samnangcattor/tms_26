@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526061625) do
+ActiveRecord::Schema.define(version: 20150611090059) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150526061625) do
     t.string   "status",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "course_id",  limit: 4
   end
 
   add_index "user_subjects", ["subject_id"], name: "index_user_subjects_on_subject_id", using: :btree
@@ -84,7 +85,7 @@ ActiveRecord::Schema.define(version: 20150526061625) do
   create_table "user_tasks", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "task_id",    limit: 4
-    t.integer  "id_course",  limit: 4
+    t.integer  "course_id",  limit: 4
     t.string   "status",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
