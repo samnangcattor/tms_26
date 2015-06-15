@@ -44,4 +44,16 @@ class User < ActiveRecord::Base
   def forget
     update_attribute :remember_digest, nil
   end
+
+  def training subject
+    user_subjects.create subject_id: subject.id, status: Settings.training
+  end
+
+  def finished? subject
+    user_subjects.exists? subject_id: subject.id, status: Settings.finished
+  end
+
+  def training? subject
+    user_subjects.exists? subject_id: subject.id, status: Settings.training
+  end
 end

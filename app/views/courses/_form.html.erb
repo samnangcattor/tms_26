@@ -1,0 +1,10 @@
+<div class="panel-heading"><h1><%= course.name %></h1></div>
+<div class="status">
+  <span class="label label-primary ">
+    <%= t "headers.status" %>
+    <%= course.status %>
+  </span>
+  <h2><%= t "headers.instruction" %></h2>
+  <div class="description"><%= course.description %></div>
+  <%= render partial: "subjects/subject", collection: course.subjects, as: :subject %>
+</div>

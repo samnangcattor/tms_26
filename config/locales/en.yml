@@ -58,6 +58,7 @@ en:
     delete: "Are you sure?"
   status:
     start: "Start"
+    training: "Trainging"
     finished: "Finished"
   menus:
     create_new_user: "Create New User"
