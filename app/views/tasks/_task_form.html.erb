@@ -1,0 +1,12 @@
+<div class="list_sub">
+  <ul class="list-group">
+    <%= task.name %>
+    <div class="pull-right">
+      <% if current_user? @user %>
+        <div id="task-<%= task.id %>">
+          <%= render "tasks/task_status", task: task %>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+</div>

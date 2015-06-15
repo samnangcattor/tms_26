@@ -45,15 +45,27 @@ class User < ActiveRecord::Base
     update_attribute :remember_digest, nil
   end
 
-  def training subject
-    user_subjects.create subject_id: subject.id, status: Settings.training
+  def training object
+    if object.instance_of? Subject
+      user_subjects.create subject_id: object.id, status: Settings.training
+    else
+      user_tasks.create task_id: object.id, status: Settings.training
+    end
   end
 
-  def finished? subject
-    user_subjects.exists? subject_id: subject.id, status: Settings.finished
+  def finished? object
+    if object.instance_of? Subject
+      user_subjects.exists? subject_id: object.id, status: Settings.finished
+    else
+      user_tasks.exists? task_id: object.id, status: Settings.finished
+    end
   end
 
-  def training? subject
-    user_subjects.exists? subject_id: subject.id, status: Settings.training
+  def training? object
+    if object.instance_of? Subject
+      user_subjects.exists? subject_id: object.id, status: Settings.training
+    else
+      user_tasks.exists? task_id: object.id, status: Settings.training
+    end
   end
 end

@@ -3,11 +3,13 @@
   <ul class="list-group">
     <li class="list-group-item"><%= subject.name %>
       <div class="pull-right">
-        <div id="subject-<%= subject.id %>">
-          <%= render "subjects/subject_form", subject: subject %>
-        </div>
+        <% if current_user? @user %>
+          <div id="subject-<%= subject.id %>">
+            <%= render "subjects/subject_form", subject: subject %>
+          </div>
+        <% end %>
       </div>
-      <%= render partial: "tasks/form", collection: subject.tasks, as: :task %>
+      <%= render partial: "tasks/task_form", collection: subject.tasks, as: :task %>
     </li>
   </ul>
 </div>

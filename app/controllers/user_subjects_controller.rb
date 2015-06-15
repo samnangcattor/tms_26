@@ -10,7 +10,7 @@ class UserSubjectsController < ApplicationController
 
   def update
     @subject = UserSubject.find params[:id]
-    if @subject.update_attributes(usersubject_param) 
+    if @subject.update_attributes usersubject_param 
       respond_to do |format|
         format.html {redirect @subject}
         format.js

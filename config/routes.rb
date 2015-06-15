@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     end
     resources :subjects
   end
-  resources :user_subjects
+  resources :user_subjects, only: [:create, :update]
+  resources :user_tasks, only: [:create, :update]
 end
