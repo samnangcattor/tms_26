@@ -1,0 +1,5 @@
+<%= form_for current_user.user_tasks.find_by(task_id: task.id),
+  remote: true do |f| %>
+  <div><%= f.hidden_field :status, value: Settings.finished %></div>
+  <%= f.submit t("status.training"), class: "btn" %>
+<% end %>

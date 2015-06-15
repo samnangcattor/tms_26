@@ -1,0 +1,1 @@
+$("#task-<%= @task.id %>").html("<%= escape_javascript(render('tasks/task_status', task: @task)) %>");
