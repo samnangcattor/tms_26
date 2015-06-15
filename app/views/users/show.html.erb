@@ -8,5 +8,6 @@
       </h1>
     </section>
   </aside>
+  <%= render "subjects/form" %>
+  <%= render partial: "courses/form", collection: @course, as: :course %>
 </div>
-<%= render "subjects/form" %>

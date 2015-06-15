@@ -1,0 +1,7 @@
+<% if current_user.training? subject %>
+  <%= render "subjects/finished", subject: subject %>
+<% elsif current_user.finished? subject %>
+  <button class="btn btn-default"><%= t "status.finished" %></button>
+<% else %>
+  <%= render "subjects/training", subject: subject %>
+<% end %>

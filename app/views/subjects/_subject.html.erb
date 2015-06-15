@@ -1,0 +1,13 @@
+<h2><%= t("headers.subject") %></h2>
+<div class="list_sub">
+  <ul class="list-group">
+    <li class="list-group-item"><%= subject.name %>
+      <div class="pull-right">
+        <div id="subject-<%= subject.id %>">
+          <%= render "subjects/subject_form", subject: subject %>
+        </div>
+      </div>
+      <%= render partial: "tasks/form", collection: subject.tasks, as: :task %>
+    </li>
+  </ul>
+</div>
