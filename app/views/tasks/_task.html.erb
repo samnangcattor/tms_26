@@ -3,7 +3,9 @@
     <%= task.name %>
     <%= activity.state %>
     <%= activity.created_at %>
-    <%= t("headers.status") %>
-    <%= task.status %>
+    <%= t "headers.status" %>
+    <% task.user_tasks.each do |user_task| %>
+      <%= user_task.status %>
+    <% end %>
   </div>
 <% end %>
