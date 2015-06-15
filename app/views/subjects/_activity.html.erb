@@ -3,8 +3,10 @@
     <%= subject.name %>
     <%= activity.state %>
     <%= activity.created_at %>
-    <%= t("headers.status") %>
-    <%= subject.status %>
+    <%= t "headers.status" %>
+    <% subject.user_subjects.each do |user_subject| %>
+      <%= user_subject.status %>
+    <% end %>
     <%= render partial: "tasks/task", collection: subject.tasks, as: :task %>
   </div>
 <% end %>
